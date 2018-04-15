@@ -65,10 +65,10 @@ class AdminService extends Service {
           }
         });
         const _token = app.jwt.sign({
+          exp: Math.floor(Date.now() / 1000) + (60 * 60 * 1000),
           username: username
         }, app.config.jwt.secret);
         await app.redis.set(_token, username);
-        console.log(app.redis.get(_token));
         return Object.assign(SUCCESS, {
           data: {
             token: _token,

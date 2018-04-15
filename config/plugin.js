@@ -8,10 +8,10 @@ exports.sequelize = {
   package: 'egg-sequelize',
 };
 
-exports.oauth2Server = {
-  enable: true,
-  package: 'egg-oauth2-server',
-};
+// exports.oauth2Server = {
+//   enable: true,
+//   package: 'egg-oauth2-server',
+// };
 
 exports.security = {
   enable: false,

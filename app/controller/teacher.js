@@ -17,6 +17,14 @@ class TeacherController extends Controller {
     const id = ctx.params.id;
     ctx.body = await ctx.service.teacher.findOne(id);
   }
+
+  async token() {
+    const {
+      ctx
+    } = this;
+    // console.log(ctx.request.body.username);
+    ctx.body = await this.service.teacher.token(ctx.request.body);
+  }
 }
 
 module.exports = TeacherController;

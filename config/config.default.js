@@ -5,6 +5,7 @@ const corsConfig = require('./config.cors');
 // const mongooseConfig = require('./config.mongoose');
 const redisConfig = require('./config.redis');
 const jwtConfig = require('./config.jwt');
+const nonFilter = require('./config.nonFilter');
 
 module.exports = appInfo => {
   const config = exports = {};
@@ -14,7 +15,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1523085898286_7366';
 
   // add your config here
-  config.middleware = [];
+  config.middleware = ['auth'];
 
   // egg-sequelize
   config.sequelize = sequelizeConfig;
@@ -25,6 +26,7 @@ module.exports = appInfo => {
   config.redis = redisConfig;
   // jwt
   config.jwt = jwtConfig;
-
+  // auth白名单
+  config.nonFilter = nonFilter;
   return config;
 };

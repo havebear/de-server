@@ -15,7 +15,7 @@ class CatalogService extends Service {
     //   offset: pageIndex,
     //   limit: pageSize
     // };
-    try {
+    try { 
       const res = await this.app.model.Catalog.findAll();
       return Object.assign(SUCCESS, {
         data: res,
