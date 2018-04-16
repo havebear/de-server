@@ -1,35 +1,34 @@
 /*
  * @Author: bgg 
- * @Date: 2018-04-16 08:59:21  模型 - 反馈
+ * @Date: 2018-04-16 08:56:37  模型 - 收藏
 */
+
 'use strict';
+
 module.exports = app => {
   const {
     INTEGER,
     STRING,
     DATE
   } = app.Sequelize;
-  const FeedBack = app.model.define('FeedBack', {
+  const Collection = app.model.define('Collection', {
     id: {
       type: INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    to_id: {
+    by_id: {
       type: INTEGER,
     },
-    content: {
-      type: STRING(300),
-    },
-    isready: {
+    to_id: {
       type: INTEGER,
     },
     create_time: DATE,
     update_time: DATE,
   }, {
     freezeTableName: true,
-    tableName: 'de_feedback',
+    tableName: 'de_collection',
     timestamps: false,
   });
-  return FeedBack;
-};
+  return Collection;
+}

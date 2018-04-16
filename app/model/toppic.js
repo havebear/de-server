@@ -1,35 +1,39 @@
 /*
  * @Author: bgg 
- * @Date: 2018-04-16 08:59:21  模型 - 反馈
-*/
+ * @Date: 2018-04-16 08:59:58  模型 - 题目
+ */
 'use strict';
+
 module.exports = app => {
   const {
     INTEGER,
     STRING,
     DATE
   } = app.Sequelize;
-  const FeedBack = app.model.define('FeedBack', {
+  const Toppic = app.model.define('Toppic', {
     id: {
       type: INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    to_id: {
+    test_id: {
+      type: INTEGER,
+    },
+    answer_id: {
       type: INTEGER,
     },
     content: {
       type: STRING(300),
     },
-    isready: {
-      type: INTEGER,
+    remack: {
+      type: STRING(300),
     },
     create_time: DATE,
     update_time: DATE,
   }, {
     freezeTableName: true,
-    tableName: 'de_feedback',
+    tableName: 'de_toppic',
     timestamps: false,
   });
-  return FeedBack;
-};
+  return Toppic;
+}

@@ -1,3 +1,7 @@
+/*
+ * @Author: bgg 
+ * @Date: 2018-04-16 09:00:12  模型 - 基础用户
+ */
 'use strict';
 module.exports = app => {
   const {

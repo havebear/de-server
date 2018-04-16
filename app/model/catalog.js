@@ -1,3 +1,7 @@
+/*
+ * @Author: bgg 
+ * @Date: 2018-04-16 08:58:17  模型 - 类别
+*/
 'use strict';
 
 module.exports = app => {

@@ -1,6 +1,6 @@
 /*
  * @Author: bgg 
- * @Date: 2018-04-16 08:59:21  模型 - 反馈
+ * @Date: 2018-04-16 08:59:43  模型 - 消息
 */
 'use strict';
 module.exports = app => {
@@ -9,11 +9,17 @@ module.exports = app => {
     STRING,
     DATE
   } = app.Sequelize;
-  const FeedBack = app.model.define('FeedBack', {
+  const Message = app.model.define('Message', {
     id: {
       type: INTEGER,
       autoIncrement: true,
       primaryKey: true,
+    },
+    isready: {
+      type: INTEGER,
+    },
+    by_id: {
+      type: INTEGER,
     },
     to_id: {
       type: INTEGER,
@@ -21,15 +27,12 @@ module.exports = app => {
     content: {
       type: STRING(300),
     },
-    isready: {
-      type: INTEGER,
-    },
     create_time: DATE,
     update_time: DATE,
   }, {
     freezeTableName: true,
-    tableName: 'de_feedback',
+    tableName: 'de_message',
     timestamps: false,
   });
-  return FeedBack;
+  return Message;
 };
