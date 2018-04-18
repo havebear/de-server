@@ -7,7 +7,7 @@ class CataLogController extends Controller {
     const {
       ctx
     } = this;
-    ctx.body = await ctx.service.catalog.findAll();
+    ctx.body = await ctx.service.catalog.findAll(ctx.params.pageIndex, ctx.params.pageSize);
   }
 }
 

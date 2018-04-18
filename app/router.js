@@ -17,8 +17,17 @@ module.exports = app => {
   router.get('/api/teacher/:id', controller.teacher.find);
   router.post('/api/teacher/token', controller.teacher.token);
 
+  router.get('/api/course', controller.course.list);
+
+  router.get('/api/test', controller.test.list);
+
+  router.get('/api/apply', controller.apply.list);
+  
+  router.get('/api/feedback', controller.feedback.list);
+
   router.get('/api/admin', controller.admin.list);
   router.post('/api/admin/token', controller.admin.token);
 
   router.post('/api/auth/logout', controller.auth.logout);
+  
 }
