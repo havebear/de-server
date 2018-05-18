@@ -1,7 +1,7 @@
 /*
  * @Author: bgg 
  * @Date: 2018-04-16 08:58:17  模型 - 类别
-*/
+ */
 'use strict';
 
 module.exports = app => {
@@ -18,6 +18,9 @@ module.exports = app => {
     },
     name: {
       type: STRING(10),
+    },
+    isenable: {
+      type: INTEGER(2),
     },
     create_time: DATE,
     update_time: DATE,

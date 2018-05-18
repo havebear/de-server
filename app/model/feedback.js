@@ -15,7 +15,7 @@ module.exports = app => {
       autoIncrement: true,
       primaryKey: true,
     },
-    to_id: {
+    by_id: {
       type: INTEGER,
     },
     content: {
